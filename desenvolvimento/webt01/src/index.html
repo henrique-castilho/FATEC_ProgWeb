@@ -58,6 +58,54 @@
   <a href="#menu">Ir para o menu</a><br>
   <a href="mailto:norton.glaser@fatec.sp.gov.br">Enviar email</a>
 
+<!--TAGS DE OBJETO-->
+<h1>Tags de objeto</h1>
+<form class = "janela">
+  <label for="nome">Nome:</label>
+  <input type="text" id="nome" required placeholder="Digite o seu nome completo" pattern="[A-z\s]{6,100}" size="40"> <br>
+
+  <label for="idade">Idade</label> 
+  <input type="number" id="idade" required min="16" max="80" step="1"> <br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" required placeholder="Digite seu email pessoal"> <br>  
+
+  <label for="senha">Senha:</label>
+  <input type="password" id="senha" required pattern="[A-z0-9@#$%¨&*()]{6,30}"> <br>
+
+  <label for="dataEvento">Data:</label>
+  <input type="date" id="dataEvento"> <br>
+
+  <label for="horaEvento">Tempo:</label>
+  <input type="time" id="horaEvento"> <br>
+
+  <label for="nota">Nota:</label>
+  <input type="range" min="1" max="5" step="1" id="nota"> <br>
+
+  <label for="copia" id="receber">Quer receber uma copia:</label>
+  <input type="checkbox" id="copia"> <br>
+
+  <label>Periodo:</label>
+  <label for="op1">Manhã:</label>
+  <input type="radio" id="op1" name="periodo" checked >
+  <label for="op2">Tarde:</label>
+  <input type="radio" id="op2" name="periodo">
+  <label for="op3">Noite:</label>
+  <input type="radio" id="op3" name="periodo"> <br>
+
+  <label for="unidade">Uninidade:</label>
+  <select id="unidade">
+    <option>Fatec SBC</option>
+    <option>Fatec SCS</option>
+    <option selected>Fatec Ipiranga</option>
+  </select> <br>
+
+  <label for="msg">Mensagem:</label>
+  <textarea id="msg" rows="5" cols="50" required></textarea> <br>
+
+  <button id="btnGravar">Enviar</button>
+</form>
+
   <app-root></app-root>
 </body>
 </html>
