@@ -5,6 +5,7 @@ body {
     background-color: gainsboro;
     font-family: 'Courier New', Courier, monospace;
     color:black;
+    margin: 0;
 }
 
 input, select, textarea {
@@ -22,6 +23,14 @@ label {
     display: inline-table;
 }
 
+header, footer{
+    width: 100%;
+    background-color: black;
+    color: white;
+    height: 10vh;
+    padding: 10px;
+    margin: 10;
+}
 
 /*# na frente é por nome do ID*/
 #btnGravar {
@@ -57,4 +66,62 @@ label {
 /*:: muda um atributo geral*/
 ::placeholder {
     color:rgb(155, 246, 214);
+}
+
+/*CSS em cascata*/
+header h1 {
+    color: yellow;
+    display: inline-table;
+    margin-right: 10%   ;
+}
+
+header input {
+    background-color: beige;
+    width: 20%;
+    height: 20px;
+}
+
+header button {
+    background-color: burlywood;
+    width: 50px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+footer p {
+    font-size:  smaller;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+header h2 {
+    display: none;
+}
+
+/*Forma de deixar responsivo*/
+/*Nesse caso quando a tela for vertical*/
+@media (orientation: portrait)  {
+    .janela {
+        width: 100%;
+        margin:  0;
+    }
+    input, select, textarea {
+        width: 90%;
+        height: 20px;
+        font-size: 12px;
+    }
+    label {
+        text-align: left;
+        width: 100%;
+    }
+    header h1 {
+        display: none;
+    }
+    header input {
+        width: 50%;
+    }
+    header h2 {
+        display: inline-table;
+    }
 }
