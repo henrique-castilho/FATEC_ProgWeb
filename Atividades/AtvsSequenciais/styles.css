@@ -19,6 +19,15 @@ label {
     display: inline-table;
 }
 
+h1, p {
+    text-align: center;
+}
+
+ul{
+    margin-left: 37%;
+}
+
+
 /*# na frente é por nome do ID*/
 #btnEnviar {
     width: 20%;
@@ -43,7 +52,7 @@ label {
     transition: 1400ms;
 }
 
-/*. na frente é por exceção*/
+/*. na frente é por exceção/classe */
 .formulario {
     width: 60%;
     margin-left: 20%;
@@ -54,11 +63,57 @@ label {
     box-shadow: 2px 2px 5px rgb(40, 40, 40);
 }
 
-.topo-pagina{
-    margin-left: 20%;
-}
 
 /*: muda um atributo geral*/
 ::placeholder{
     color: white;
+}
+
+@media (orientation: portrait) {
+    body {
+        width: 100%;
+        margin:  0;
+    }
+
+    input, select, textarea {
+        width: 90%;
+        height: 25px;
+        font-size: 12px;
+    }
+    
+    label {
+        text-align: left;
+        width: 100%;
+    }
+
+    .formulario {
+       height: auto;
+    }
+    
+    #btnEnviar {
+        width: 45%; 
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    ul {
+        margin-left: 15%;
+    }
+
+}
+
+@media (orientation: landscape) {
+    body {
+        width: 100%;
+        margin:  0;
+    }
+
+    .formulario {
+        height: auto;
+    }
+    
+    #btnEnviar {
+        width: 20%; 
+    }
+
 }

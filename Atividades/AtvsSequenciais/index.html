@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="topo-pagina">
-        <h1 style="color:rgb(255, 255, 255); font-size: 45px;"> Contato</h1>
+    <div>
+        <h1 style="color:rgb(255, 255, 255); font-size: 45px;"> Contato </h1>
         <p align="left" style="font-size: 18px;"><i>Seja bem vindo preencha o <b>formulario</b> abaixo para:</i></p> 
         <ul>
             <li style="font-size: 18px;">Duvidas</li>
@@ -20,13 +20,13 @@
     </div>
     <form class = "formulario">
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" required placeholder="Digite seu nome" pattern="[A-z\s]{3,100}" size="40"> <br>
+        <input type="text" id="nome" required placeholder="Digite seu nome" pattern="[A-z\s]{3,100}" size="24"><br>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" required placeholder="Digite seu email" size="40"> <br>
+        <input type="email" id="email" required placeholder="Digite seu email" size="24"> <br>
         
         <label for="telefone">Telefone:</label>
-        <input type="tel" id="telefone" required placeholder="Digite seu telefone" pattern="\d{5}-\d{4}" maxlength="14" size="30" value="( ) "> <br>
+        <input type="tel" id="telefone" required placeholder="Digite seu telefone" pattern="\d{5}-\d{4}" maxlength="14" value="( ) "> <br>
         
         <label for="assunto">Assunto:</label>
         <select id="assunto">
