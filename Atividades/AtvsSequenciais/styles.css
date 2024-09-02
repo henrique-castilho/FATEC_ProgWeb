@@ -61,6 +61,7 @@ ul{
     border: black groove 2px;
     padding: 5px;
     box-shadow: 2px 2px 5px rgb(40, 40, 40);
+    border-radius: 10px;
 }
 
 
@@ -88,6 +89,7 @@ ul{
 
     .formulario {
        height: auto;
+       border-radius: 10px;
     }
     
     #btnEnviar {
@@ -110,6 +112,7 @@ ul{
 
     .formulario {
         height: auto;
+        border-radius: 10px;
     }
     
     #btnEnviar {
