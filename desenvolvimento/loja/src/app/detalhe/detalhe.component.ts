@@ -9,6 +9,7 @@ import { Produto } from '../model/produto';
   templateUrl: './detalhe.component.html',
   styleUrl: './detalhe.component.css'
 })
+
 export class DetalheComponent {
   public mensagem: String = "";
   public item: Produto = new Produto();
