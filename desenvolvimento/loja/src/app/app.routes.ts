@@ -17,5 +17,5 @@ export const routes: Routes = [
     {path:"busca", component:BuscaComponent},
     {path:"login", component:LoginComponent},
     {path:"cesta", component:CestaComponent},
-    {path:"esqueci0", component:EsqueciComponent}
+    {path:"esqueci", component:EsqueciComponent}
 ];
