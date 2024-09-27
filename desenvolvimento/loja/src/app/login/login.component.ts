@@ -25,6 +25,6 @@ export class LoginComponent {
   }
   public novoCadastro(){
     localStorage.setItem("cliente", JSON.stringify(this.obj));
-    window.location.href="./clinte";
+    window.location.href="./cliente";
   }
 }
