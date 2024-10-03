@@ -10,5 +10,5 @@
     <br><br>
     R$ {{item.valor}}
     <button (click)="verDetalhe(item)">Ver mais</button>
-    <button *ngIf="item.quantidade">Comprar</button>
+    <button *ngIf="item.quantidade >0" (click)="adicionarItem(item)">Comprar</button>
 </div>
