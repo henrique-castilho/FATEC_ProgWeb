@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Programação Web - Tarde 2024</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="author" content="Henrique Castilho" >
+  <meta name="descripton" content= "Primeira pagina html5">
+  <meta name="keywords" content="html, html5, fatec Ipiranga">
+</head>
+<body>
+  <h1>Título</h1>
+  <h2>Subtítulo</h2>
+  <p align="center">Texto puro texto puro</p>
+  <p align="right">direita</p>
+  <div id="menu">divisão</div>
+  <div id="conteudo">conteudo</div>
+  <navigation>barra de navegação</navigation>
+  <section>seção do site</section>
+  <footer>rodape</footer>
+  <header>cabeçalho</header>
+  <!-- comentario mais estranho do mundo -->
+  <table border="1" align="center" width="70%">
+    <tr>
+      <td>Azul</td>
+      <td>Verde</td>
+    </tr>
+    <tr>
+      <td>Amarelo</td>
+      <td>Branco</td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <ul>
+    <li>Maçã</li>
+    <li>Laranja</li>
+    <li>Morango</li>
+  </ul>
+  <ol>
+    <li>Maçã</li>
+    <li>Laranja</li>
+    <li>Morango</li>
+  </ol>
+
+  <!--Tags de formatação -->
+  <b>Negrito</b> <br>
+  <i>Itálico</i> <br>
+  <u>Sublinhado</u> <br>
+  <s>Riscado</s> <br>
+  <b><u><i>tudo junto</i></u></b>
+  <marquee>
+    <font color="red" size="10px">teste de html</font><br>
+  </marquee><br>
+  <a href="http://professor.norton.net.br" target="new">Site prof. Norton </a><br>
+  <a href="#menu">Ir para o menu</a><br>
+  <a href="mailto:norton.glaser@fatec.sp.gov.br">Enviar email</a>
+
+  <header>
+    <h1>minhaloja.com.br</h1>
+    <h2>ML</h2>
+    <input type="text" id="busca">
+    <button>ok</button>
+  </header>  
+
+  <!--TAGS DE OBJETO-->
+  <h1>Tags de objeto</h1>
+  <form class = "janela">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" required placeholder="Digite o seu nome completo" pattern="[A-z\s]{6,100}"> <br>
+
+    <label for="idade">Idade</label> 
+    <input type="number" id="idade" required min="16" max="80" step="1"> <br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required placeholder="Digite seu email pessoal"> <br>  
+
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" required pattern="[A-z0-9@#$%¨&*()]{6,30}"> <br>
+
+    <label for="dataEvento">Data:</label>
+    <input type="date" id="dataEvento"> <br>
+
+    <label for="horaEvento">Tempo:</label>
+    <input type="time" id="horaEvento"> <br>
+
+    <label for="nota">Nota:</label>
+    <input type="range" min="1" max="5" step="1" id="nota"> <br>
+
+    <label for="copia" id="receber">Quer receber uma copia:</label>
+    <input type="checkbox" id="copia"> <br>
+
+    <label>Periodo:</label>
+    <label for="op1">Manhã:</label>
+    <input type="radio" id="op1" name="periodo" checked >
+    <label for="op2">Tarde:</label>
+    <input type="radio" id="op2" name="periodo">
+    <label for="op3">Noite:</label>
+    <input type="radio" id="op3" name="periodo"> <br>
+
+    <label for="unidade">Uninidade:</label>
+    <select id="unidade">
+      <option>Fatec SBC</option>
+      <option>Fatec SCS</option>
+      <option selected>Fatec Ipiranga</option>
+    </select> <br>
+
+    <label for="msg">Mensagem:</label>
+    <textarea id="msg" rows="5" cols="50" required></textarea> <br>
+
+    <button id="btnGravar">Enviar</button>
+  </form>
+
+  <br>
+  <footer>
+    <p>todos os direitos reservados <br>
+    11-2342-23423</p>
+  </footer>
+  
+  <app-root></app-root>
+</body>
+</html>
