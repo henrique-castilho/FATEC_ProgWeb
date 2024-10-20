@@ -12,8 +12,6 @@ public class Cliente {
     public String cidade;
     public String uf;
 
-    
-
     public Cliente(int codigo, String nome, String email, String senha, String telefone, String documento,
             String logradouro, String cep, String cidade, String uf) {
         this.codigo = codigo;
@@ -87,8 +85,5 @@ public class Cliente {
     }
     public void setUf(String uf) {
         this.uf = uf;
-    }
-
-
-    
+    }    
 }
