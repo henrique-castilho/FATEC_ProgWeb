@@ -1,16 +1,18 @@
 package com.fatec.loja;
 
 public class Cliente {
-    public int codigo;
-    public String nome;
-    public String email;
-    public String senha;
-    public String telefone;
-    public String documento;
-    public String logradouro;
-    public String cep;
-    public String cidade;
-    public String uf;
+    private int codigo;
+    private String nome;
+    private String email;
+    private String senha;
+    private String telefone;
+    private String documento;
+    private String logradouro;
+    private String cep;
+    private String cidade;
+    private String uf;
+
+    public Cliente(){}
 
     public Cliente(int codigo, String nome, String email, String senha, String telefone, String documento,
             String logradouro, String cep, String cidade, String uf) {
