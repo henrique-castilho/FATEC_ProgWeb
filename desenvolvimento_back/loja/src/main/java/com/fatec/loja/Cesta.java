@@ -9,6 +9,7 @@ public class Cesta {
     private double total;
     private List<Item> itens = new ArrayList<Item>();
 
+    public Cesta() {}
 
     public Cesta(int codigo, Cliente cliente, double total, List<Item> itens) {
         this.codigo = codigo;

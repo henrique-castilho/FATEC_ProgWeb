@@ -6,6 +6,7 @@ public class Item {
     private int quantidade;
     private double valor;
     
+    public Item() {}
 
     public Item(int codigo, Produto produto, int quantidade, double valor) {
         this.codigo = codigo;
