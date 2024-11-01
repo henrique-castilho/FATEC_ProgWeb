@@ -1,0 +1,27 @@
+.container {
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+#titulo{
+    text-align: center;
+}
+
+h1 {
+    font-size: 45px;
+}
+
+p i {
+    font-style: italic;
+}
+
+p a {
+    color: #007bff;
+}
+
+ul li {
+    font-size: 18px;
+}
+
+.form-label {
+    font-size: 18px;
+}
