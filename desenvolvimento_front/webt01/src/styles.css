@@ -1,0 +1,127 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*Sem nada na frente é por nome de tag*/
+body {
+    background-color: gainsboro;
+    font-family: 'Courier New', Courier, monospace;
+    color:black;
+    margin: 0;
+}
+
+input, select, textarea {
+    background-color: rgb(33, 37, 51);
+    color: rgba(255, 255, 255, 0.849);
+    border: solid 1px black;
+    padding: 4px;
+    margin: 3px;
+    /*text-transform: capitalize; (deixar a primeira letrar Maiuscula)*/
+}
+
+label {
+    width: 100px;
+    text-align: right;
+    display: inline-table;
+}
+
+header, footer{
+    width: 100%;
+    background-color: black;
+    color: white;
+    height: 10vh;
+    padding: 10px;
+    margin: 10;
+}
+
+/*# na frente é por nome do ID*/
+#btnGravar {
+    width: 30%;
+    padding: 10px;
+    background-color: blueviolet;
+    color: white;
+    border: white solid 2px;
+    border-radius: 5px;
+}
+
+#btnGravar:hover {
+    background-color: brown;
+    text-shadow: 2px 2px 5px white;
+    transition: 1500ms;
+}
+
+#receber{
+    width: 150px;
+}
+
+/*. na frente é por exceção/classe */
+.janela {
+    width: 60%;
+    margin-left: 20%;
+    height: 90vh;
+    background-color: rgb(185, 185, 185);
+    border: white solid 1px;
+    padding: 5px;
+    box-shadow: 2px 2px 5px gray;
+}
+
+/*:: muda um atributo geral*/
+::placeholder {
+    color:rgb(155, 246, 214);
+}
+
+/*CSS em cascata*/
+header h1 {
+    color: yellow;
+    display: inline-table;
+    margin-right: 10%   ;
+}
+
+header input {
+    background-color: beige;
+    width: 20%;
+    height: 20px;
+}
+
+header button {
+    background-color: burlywood;
+    width: 50px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+footer p {
+    font-size:  smaller;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+header h2 {
+    display: none;
+}
+
+/*Forma de deixar responsivo*/
+/*Nesse caso quando a tela for vertical*/
+@media (orientation: portrait)  {
+    .janela {
+        width: 100%;
+        margin:  0;
+    }
+    input, select, textarea {
+        width: 90%;
+        height: 20px;
+        font-size: 12px;
+    }
+    label {
+        text-align: left;
+        width: 100%;
+    }
+    header h1 {
+        display: none;
+    }
+    header input {
+        width: 50%;
+    }
+    header h2 {
+        display: inline-table;
+    }
+}
