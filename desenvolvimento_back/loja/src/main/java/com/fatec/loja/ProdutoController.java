@@ -53,4 +53,15 @@ public class ProdutoController {
     public List<Produto>  listar() {
         return bd.findAll();
     }
-}
+
+    @GetMapping("/api/produto/vitrine")
+    public List<Produto> listarVitrine() {
+        return bd.listarVitrine();
+    }
+
+    @GetMapping("/api/produto/busca/{palavraChave}")
+    public List<Produto> fazerBusca(@PathVariable("palavraChave")String palavraChave) {
+        return bd.fazerBusca(palavraChave);
+    }
+   
+}   

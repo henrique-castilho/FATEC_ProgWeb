@@ -15,6 +15,7 @@ public class Produto {
     private double valor;
     private int quantidade;
     private String keywords;
+    private int destaque = 0;
 
     public Produto(){}
     
@@ -53,5 +54,11 @@ public class Produto {
     }
     public void setKeywords(String keywords) {
         this.keywords = keywords;
+    }
+    public int getDestaque() {
+        return destaque;
+    }
+    public void setDestaque(int destaque) {
+        this.destaque = destaque;
     }
 }
