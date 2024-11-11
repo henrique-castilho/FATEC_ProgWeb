@@ -42,22 +42,27 @@ export class ClienteComponent {
     })
   }
 
-  public remover(){
+  public remover() {
     this.service.remover(this.obj.codigo).subscribe({
-      next : (data) => {
-        this.mensagem = "Cadastro removido com sucesso!";
-        this.limpar();
-      },
-      error: (err) => {
-        this.mensagem = "Ocorreu um erro, tente mais tarde!";
-      }
-    })
-  }
+        next: (data) => {
+            if (data === null) {
+                this.mensagem = "Cadastro removido com sucesso!";
+            } else {
+                this.mensagem = "Cliente não encontrado";
+            }
+            this.limpar();
+        },
+        error: (err) => {
+            this.mensagem = "Ocorreu um erro, tente mais tarde!";
+        }
+    });
+}
+
 
   public carregar(){
     this.service.carregar(this.obj.codigo).subscribe({
       next : (data) => {
-        if(data==null) {
+        if(data === null) {
           this.mensagem = "Cadastro não encontrado, verifique!";
           this.limpar();
 
@@ -76,5 +81,4 @@ export class ClienteComponent {
   public limpar(){
     this.obj = new Cliente();
   }
-
 }
