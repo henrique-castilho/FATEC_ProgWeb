@@ -1,6 +1,6 @@
 <h1>Meu cadastro</h1>
 <b>{{mensagem}}</b> <br>
-
+    codigo: <input type="number" [(ngModel)] = "obj.codigo"> <br>
     nome: <input type="text" [(ngModel)] = "obj.nome"> <br>
     email: <input type="email" [(ngModel)] = "obj.email"> <br>
     documento:<input type="text" [(ngModel)] = "obj.documento"> <br>
@@ -10,4 +10,7 @@
     cidade: <input type="text" [(ngModel)] = "obj.cidade"> <br>
     uf: <input type="text" [(ngModel)] = "obj.uf"> <br>
     senha: <input type="password" [(ngModel)] = "obj.senha"> <br>
-    <button (click)= "gravar()"> Gravar </button>
+    <button (click)="gravar()">Gravar </button>
+    <button (click)="alterar()">alterar</button>
+    <button (click)="remover()">Remover</button>
+    <button (click)="carregar()">Pesquisar</button>
