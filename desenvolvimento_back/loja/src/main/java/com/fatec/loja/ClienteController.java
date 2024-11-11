@@ -1,6 +1,7 @@
 package com.fatec.loja;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,15 +21,15 @@ public class ClienteController {
     ClienteRepository bd;
 
     @PostMapping("/api/cliente")
-    public String gravar(@RequestBody Cliente obj){
+    public Map<String, String> gravar(@RequestBody Cliente obj) {
         bd.save(obj);
-        return "O cliente " + obj.getNome() + " foi salvo corretamente";
+        return Map.of("mensagem","O cliente " + obj.getNome() + " foi salvo corretamente");
     }
-
+    
     @PutMapping("/api/cliente")
-    public String alterar(@RequestBody Cliente obj){
+    public Map<String, String> alterar(@RequestBody Cliente obj){
         bd.save(obj);
-        return "O cliente " + obj.getNome() + " foi alterado corretamente";
+        return Map.of("mensagem", "O cliente " + obj.getNome() + " foi alterado corretamente");
     }
 
     @GetMapping("/api/cliente/{codigo}")
@@ -42,12 +43,12 @@ public class ClienteController {
     }
 
     @DeleteMapping("/api/cliente/{codigo}")
-    public String remover(@PathVariable int codigo) {
+    public Map<String, String> remover(@PathVariable int codigo) {
         if (bd.existsById(codigo)) {
             bd.deleteById(codigo);
-            return "Registro " + codigo + " removido com sucesso!";
+            return null;
         } else {
-            return "Cliente não encontrado";
+            return Map.of("mensagem", "Cliente não encontrado");
         }
     }
 
