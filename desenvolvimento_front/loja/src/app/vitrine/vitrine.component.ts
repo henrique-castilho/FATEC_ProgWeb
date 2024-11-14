@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Produto } from '../model/produto';
 import { Item } from '../model/item';
 import { Cesta } from '../model/cesta';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-vitrine',
@@ -14,20 +15,21 @@ import { Cesta } from '../model/cesta';
 
 export class VitrineComponent {
   public mensagem: string = "Conheça as nossas promoções";
-  public lista:  Produto[] = [
-    {codigo:1, nome:"Martelo", descritivo:"Martelo unha - cabo de borracha", 
-      valor:30.00, quantidade:10, keywords:"Ferrammenteas manuais"
-    },
-    {codigo:2, nome:"Picareta", descritivo:"Picareta cabo de madeira", 
-      valor:40.00, quantidade:10, keywords:"Ferrammenteas manuais"
-    },
-    {codigo:3, nome:"Pá", descritivo:"Pá de bico - cabo de madeira", 
-      valor:50.00, quantidade:10, keywords:"Ferrammenteas manuais"
-    },
-    {codigo:4, nome:"Machado", descritivo:"Machado - cabo de borracha",
-     valor:60.00, quantidade:10, keywords:"Ferrammenteas manuais"
-    }
-  ];
+  public lista:  Produto[] = [];
+
+  constructor(private service:ProdutoService) {
+    this.carregarLista();
+  }
+
+  carregarLista(){
+    this.service.vitrine().subscribe({
+      next:(data)=>{
+        this.lista = data
+        if(this.lista.length <= 0) this.mensagem = "Não existe produto!!!!!";
+      },
+      error:(msg)=>(this.mensagem = "Ocorreu erro tente mais tarde!!!!")
+    })
+  }
 
   public verDetalhe(item:Produto) {
     localStorage.setItem("produto", JSON.stringify(item));
