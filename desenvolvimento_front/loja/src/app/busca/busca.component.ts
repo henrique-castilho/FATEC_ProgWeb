@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Produto } from '../model/produto';
 import { Item } from '../model/item';
 import { Cesta } from '../model/cesta';
+import { ProdutoService } from '../service/produto.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,20 +16,20 @@ import { FormsModule } from '@angular/forms';
 export class BuscaComponent {
   public mensagem: string = "";
   public filtro: string = ""
-  public lista:  Produto[] = [
-    {codigo:1, nome:"Martelo", descritivo:"Martelo unha - cabo de borracha", 
-      valor:30.00, quantidade:10, keywords:"Ferrammenteas manuais"
-    },
-    {codigo:2, nome:"Picareta", descritivo:"Picareta cabo de madeira", 
-      valor:40.00, quantidade:10, keywords:"Ferrammenteas manuais"
-    },
-    {codigo:3, nome:"Pá", descritivo:"Pá de bico - cabo de madeira", 
-      valor:50.00, quantidade:10, keywords:"Ferrammenteas manuais"
-    },
-    {codigo:4, nome:"Machado", descritivo:"Machado - cabo de borracha",
-     valor:60.00, quantidade:10, keywords:"Ferrammenteas manuais"
-    }
-  ];
+  public lista:  Produto[] = [];
+  public palavraChave: string = "";
+  
+  constructor(private service:ProdutoService) {}
+
+  fazerBusca(){
+    this.service.buscar(this.palavraChave).subscribe({
+      next:(data)=>{
+        this.lista = data
+        if(this.lista.length <= 0) this.mensagem = "Não existe produto!!!!!";
+      },
+      error:(msg)=>(this.mensagem = "Ocorreu erro tente mais tarde!!!!")
+    })
+  }
 
   public verDetalhe(item:Produto) {
     localStorage.setItem("produto", JSON.stringify(item));
