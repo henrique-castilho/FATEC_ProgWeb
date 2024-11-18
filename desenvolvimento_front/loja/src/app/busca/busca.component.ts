@@ -19,13 +19,22 @@ export class BuscaComponent {
   public lista:  Produto[] = [];
   public palavraChave: string = "";
   
-  constructor(private service:ProdutoService) {}
+  constructor(private service:ProdutoService) {
+    let termoBusca = localStorage.getItem("termoBusca");
+    if (termoBusca != null){
+      this.palavraChave = termoBusca;
+      this.fazerBusca();
+    }
+  }
 
   fazerBusca(){
     this.service.buscar(this.palavraChave).subscribe({
       next:(data)=>{
         this.lista = data
-        if(this.lista.length <= 0) this.mensagem = "Não existe produto!!!!!";
+        if(this.lista.length <= 0) 
+            this.mensagem = "Não existe produto com a palavra: " + this.palavraChave;
+        else 
+            this.mensagem = this.lista.length + " registros não encontrados!!!"
       },
       error:(msg)=>(this.mensagem = "Ocorreu erro tente mais tarde!!!!")
     })
