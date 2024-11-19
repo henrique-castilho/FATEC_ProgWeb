@@ -34,7 +34,7 @@ export class BuscaComponent {
         if(this.lista.length <= 0) 
             this.mensagem = "Não existe produto com a palavra: " + this.palavraChave;
         else 
-            this.mensagem = this.lista.length + " registros não encontrados!!!"
+            this.mensagem = this.lista.length + " registros encontrados!!!"
       },
       error:(msg)=>(this.mensagem = "Ocorreu erro tente mais tarde!!!!")
     })
