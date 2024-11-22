@@ -1,8 +1,12 @@
 package com.fatec.loja;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,33 +15,47 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
+@CrossOrigin(origins = "*")
 public class CestaController {
+  @Autowired
+  CestaRepository bd;
+
     @PostMapping("/api/cesta")
-    public String gravar(@RequestBody Cesta obj){
-        return "O item da cesta " + obj.getItens() + " foi salva corretamente";
+    public Cesta gravar(@RequestBody Cesta obj){
+       obj.setCodigoCliente();
+       bd.save(obj);
+       return obj;
     }
 
     @PutMapping("/api/cesta")
-    public String alterar(@RequestBody Cesta obj){
-        return "O item da cesta " + obj.getItens() + " foi alterada corretamente";
-    }
+    public void alterar(@RequestBody Cesta obj){
+        bd.save(obj);
+       }
 
     @GetMapping("/api/cesta/{codigo}")
     public Cesta carregar(@PathVariable int codigo){
-        Cliente cliente = new Cliente();
-        List<Item> itens = new ArrayList<>();      
-        Cesta obj = new Cesta(1, cliente, 100.00, itens);
-        return obj;
+       Optional<Cesta> obj = bd.findById(codigo);
+       if(obj.isPresent()){
+            return obj.get();
+        } else {
+            Cesta c1 = new Cesta();
+            c1.setCliente(new Cliente());
+            Set<Item> itens = new HashSet<Item>();
+            itens.add(new Item());
+            c1.setItens(itens);
+            return c1;
+        }
     }
 
     @DeleteMapping("/api/cesta/{codigo}")
-    public String remover(@PathVariable int codigo){
-        return "Registro " + codigo + " removido com sucesso!";
-    }
+    public void remover(@PathVariable int codigo){
+        bd.deleteById(codigo);
+       }
 
     @GetMapping("/api/cestas")
     public List<Cesta> listar(){
-        return new ArrayList<Cesta>();
+       return bd.findAll();
     }
 }
