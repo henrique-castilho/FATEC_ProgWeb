@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Cliente } from '../model/cliente';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ClienteService } from '../service/cliente.service';
 
 @Component({
   selector: 'app-login',
@@ -14,16 +15,27 @@ export class LoginComponent {
   public mensagem: string = "";
   public obj: Cliente = new Cliente();
 
+  constructor(private service: ClienteService) {}
+
   public fazerLogin(){
-    if(this.obj.email == "henrique@gmail.com" && this.obj.senha == "123456") {
-      localStorage.setItem("cliente", JSON.stringify(this.obj));
-      window.location.href="./cliente";
-    } else {
-      this.mensagem = "email ou senha ivalidos !!!"
-      localStorage.removeItem("cliente");
-    }
+    this.service.fazerLogin(this.obj).subscribe({
+        next:(data)=>{
+          this.obj = data;
+          if(this.obj.codigo!=0){
+            localStorage.setItem("cliente", JSON.stringify(this.obj));
+            window.location.href="./cesta";
+          }
+          else {
+            this.mensagem = "login ou senha invalidos!!!"
+          }
+        },
+        error:(msg)=>{
+          this.mensagem = "ocorreu um erro tente novamente!"
+        }
+    });
   }
-  public novoCadastro(){
+
+  public novoCadastro() {
     localStorage.setItem("cliente", JSON.stringify(this.obj));
     window.location.href="./cliente";
   }
